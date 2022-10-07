@@ -1,4 +1,5 @@
 import React from 'react';
+import "./App.css";
 
 
 var AnnualReport = () => {
@@ -12,8 +13,10 @@ var AnnualReport = () => {
         }}
       >
         <h1>Here are some pictures</h1>
-        <div>
-            <img src="https://picsum.photos/200" alt="" />
+        <div className="app">
+            <div className="img-container">
+                <img src="https://picsum.photos/200" alt="" />
+            </div>
         </div>
       </div>
     );

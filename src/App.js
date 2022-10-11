@@ -9,7 +9,7 @@ import Pictures from './pages/pictures';
 
 function App() {
   return (
-    <Router basename="/difbit.github.io">
+    <Router>
       <Navbar />
       <Routes>
         <Route path='/' exact element={<Home />} />

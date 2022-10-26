@@ -8,17 +8,6 @@ import Finnish from './pages/finnish';
 import Pictures from './pages/pictures';
 
 function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path='/' exact element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/finnish' element={<Finnish />} />
-        <Route path='/pictures' element={<Pictures />} />
-      </Routes>
-    </Router>
-  );
 
 console.log("TEST");
 var pathSegmentsToKeep = 0;
@@ -40,6 +29,18 @@ l.replace(
       );
     }
   }(window.location))
+
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' exact element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/finnish' element={<Finnish />} />
+        <Route path='/pictures' element={<Pictures />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

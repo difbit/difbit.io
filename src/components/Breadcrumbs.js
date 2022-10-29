@@ -1,25 +1,21 @@
-import * as React from 'react';
-import { Route, RouteComponentProps } from 'react-router-dom';
-import { InteractiveLink } from '../ui/InteractiveLink';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
+import InteractiveLink from './InteractiveLink';
 
-interface breadCrumbTitlesInterface {
-  [key: string]: string | undefined;
-}
-
-const breadCrumbTitles: breadCrumbTitlesInterface = {
+const breadCrumbTitles = {
   '': 'Home',
   example: 'Example',
   'two-deep': 'Two Deep',
   'sitemap-link-generator': 'Sitemap Link Generator',
 };
 
-const BreadcrumbsItem: React.VFC<RouteComponentProps> = ({ match }) => {
+function BreadcrumbsItem({ match }) {
   const path =
     match.url.length > 1 && match.url[match.url.length - 1] === '/'
       ? match.url.slice(0, -1)
       : match.url;
-
-  const title = breadCrumbTitles[path.split('/').slice(-1)[0]];
+  const title = breadCrumbTitles[path.split('/').slice(-1)];
   const to = title === undefined ? '/' : path;
 
   return (
@@ -34,8 +30,12 @@ const BreadcrumbsItem: React.VFC<RouteComponentProps> = ({ match }) => {
       )}
     </span>
   );
+}
+
+BreadcrumbsItem.propTypes = {
+  match: PropTypes.object.isRequired,
 };
 
-export const Breadcrumbs: React.VFC = () => (
-  <Route path="/" component={BreadcrumbsItem} />
-);
+export default function Breadcrumbs() {
+  return <Route path="/" component={BreadcrumbsItem} />;
+}

@@ -1,33 +1,17 @@
-import * as React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
-import { InteractiveLink } from '../ui/InteractiveLink';
-import { P } from '../ui/Paragraph';
-import { styled } from '../stitches.config';
+import React from 'react';
+import PropTypes from 'prop-types';
+import InteractiveLink from './InteractiveLink';
+import { Li, P } from './UI';
 
-const StyledLi = styled('li', {
-  paddingLeft: '18px',
-  textIndent: '-15px',
-  margin: '4px 0',
-  listStyle: 'none',
-});
+const lineContainerStyle = {
+  margin: '3vh 0',
+};
 
-interface LiProps {
-  children: React.ReactText;
-}
-const Li: React.VFC<LiProps> = ({ children }) => (
-  <StyledLi>
-    <span style={{ paddingRight: '7px' }}>&ndash;</span>
-    {children}
-  </StyledLi>
-);
+const propTypes = {
+  location: PropTypes.object.isRequired,
+};
 
-const LineContainer = styled('div', {
-  margin: '20px 0',
-});
-
-export const ExampleTwoDeepComponent: React.VFC<RouteComponentProps> = ({
-  location,
-}) => {
+export default function ExampleTwoDeepComponent({ location }) {
   const queryPresent = location.search !== '';
   const hashPresent = location.hash !== '';
 
@@ -56,11 +40,11 @@ export const ExampleTwoDeepComponent: React.VFC<RouteComponentProps> = ({
       linkText = 'Show with query string and hash fragment';
 
     return (
-      <LineContainer>
+      <div style={lineContainerStyle}>
         <InteractiveLink to={`/example/two-deep${queryString}${hashFragment}`}>
           {linkText}
         </InteractiveLink>
-      </LineContainer>
+      </div>
     );
   }
 
@@ -80,7 +64,7 @@ export const ExampleTwoDeepComponent: React.VFC<RouteComponentProps> = ({
         page or copy/paste the url to test out the redirect functionality (this
         same page should load after the redirect).
       </P>
-      <LineContainer>
+      <div style={lineContainerStyle}>
         <div>{queryStringTitle()}</div>
         <ul>
           {parseQueryString().map((pair, index) => (
@@ -89,12 +73,14 @@ export const ExampleTwoDeepComponent: React.VFC<RouteComponentProps> = ({
             >{`${pair[0]}: ${pair[1]}`}</Li>
           ))}
         </ul>
-      </LineContainer>
-      <LineContainer>
+      </div>
+      <div style={lineContainerStyle}>
         <div>{hashFragmentTitle()}</div>
         <ul>{hashPresent && <Li>{location.hash.slice(1)}</Li>}</ul>
-      </LineContainer>
+      </div>
       {linkToShowQueryAndOrHash()}
     </div>
   );
-};
+}
+
+ExampleTwoDeepComponent.propTypes = propTypes;

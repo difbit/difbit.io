@@ -1,29 +1,38 @@
-import * as React from 'react';
-import * as CSS from 'csstype';
-import { Interactive } from 'react-interactive';
-import { InteractiveLink } from '../ui/InteractiveLink';
-import { P } from '../ui/Paragraph';
-import { styled } from '../stitches.config';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Interactive from 'react-interactive';
+import InteractiveLink from './InteractiveLink';
+import { P, Code } from './UI';
 
-const InteractiveInput = styled(Interactive.Input, {
-  lineHeight: '1.4',
-  backgroundColor: '$formElementsBackground',
-  padding: '1px 5px',
-  border: '1px solid $highContrast',
-  borderRadius: '4px',
-  '&.focus': {
-    borderColor: '$green',
-    boxShadow: '0 0 0 1px $colors$green',
-  },
-  '&.focusFromKey': {
-    borderColor: '$purple',
-    boxShadow: '0 0 0 1px $colors$purple',
-  },
-});
+const propTypes = {
+  style: PropTypes.object,
+};
 
-export const SitemapLinkGenerator: React.VFC = () => {
-  const [url, setUrl] = React.useState('');
-  const [segments, setSegments] = React.useState('0');
+const Input = ({ style, ...rest }) => (
+  <Interactive
+    as="input"
+    focus={{
+      outline: '2px solid rgb(0, 152, 0)',
+      outlineOffset: '-1px',
+    }}
+    style={{
+      lineHeight: '1.4',
+      backgroundColor: 'white',
+      padding: '1px 5px',
+      border: '1px solid black',
+      borderRadius: '0',
+      WebkitAppearance: 'none',
+      ...style,
+    }}
+    {...rest}
+  />
+);
+
+Input.propTypes = propTypes;
+
+export default function SitemapLinkGenerator() {
+  const [url, setUrl] = useState('');
+  const [segments, setSegments] = useState('0');
   let sitemapLink;
 
   try {
@@ -49,6 +58,7 @@ export const SitemapLinkGenerator: React.VFC = () => {
         .replace(/&/g, '~and~') +
       (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
       l.hash;
+    // eslint-disable-next-line no-empty
   } catch {}
 
   return (
@@ -63,32 +73,30 @@ export const SitemapLinkGenerator: React.VFC = () => {
         .
       </P>
       <P>
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label>
           <span style={{ marginRight: '10px' }}>
-            <code>pathSegmentsToKeep</code> (set in <code>404.html</code>):
+            <Code>pathSegmentsToKeep</Code> (set in <Code>404.html</Code>):
           </span>
-          <InteractiveInput
-            css={{ width: '40px' }}
+          <Input
+            style={{ width: '40px' }}
             type="number"
             min="0"
             step="1"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setSegments(e.target.value)
-            }
+            onChange={(e) => setSegments(e.target.value)}
             value={segments}
           />
         </label>
       </P>
       <P>
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label>
           Page URL:
-          <InteractiveInput
+          <Input
             type="text"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setUrl(e.target.value)
-            }
+            onChange={(e) => setUrl(e.target.value)}
             value={url}
-            css={{ width: '100%' }}
+            style={{ width: '100%' }}
           />
         </label>
       </P>
@@ -100,4 +108,4 @@ export const SitemapLinkGenerator: React.VFC = () => {
       </P>
     </div>
   );
-};
+}

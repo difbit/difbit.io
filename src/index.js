@@ -2,8 +2,10 @@ import React from 'react';
 //import ReactDOM from 'react-dom/client';
 import ReactDOM from 'react-dom';
 //import './index.css';
+
 import App from './App';
 import Reroute from './App';
+
 //import reportWebVitals from './reportWebVitals';
 //import registerServiceWorker from "./registerServiceWorker";
 //import Counter from './components/counter';
@@ -20,7 +22,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <React.StrictMode>
-        <Reroute />
+        //<Reroute />
         <App />
     </React.StrictMode>
 );

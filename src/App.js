@@ -10,7 +10,7 @@ import Pictures from './pages/pictures';
 function App() {
   return (
     <Router>
-      <Navbar />
+      //<Navbar />
       <Routes>
         <Route path='/' exact element={<Home />} />
         <Route path='/about' element={<About />} />

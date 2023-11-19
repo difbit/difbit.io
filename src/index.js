@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 //import './index.css';
 
 import App from './App';
-import Reroute from './App';
+//import Reroute from './App';
 
 //import reportWebVitals from './reportWebVitals';
 //import registerServiceWorker from "./registerServiceWorker";

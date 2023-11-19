@@ -14,13 +14,13 @@ const Navbar = () => {
 
         <NavMenu>
           <NavLink to='/about' activeStyle>
-            About
+            About 2
           </NavLink>
           <NavLink to='/finnish' activeStyle>
-            Finnish
+            Finnish 2
           </NavLink>
           <NavLink to='/pictures' activeStyle>
-            Pictures
+            Pictures 2
           </NavLink>
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}

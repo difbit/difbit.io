@@ -45,4 +45,4 @@ function Reroute() {
 }
 
 export default App;
-export default Reroute;
+//export default Reroute;

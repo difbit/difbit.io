@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import "./App.css";
 import App from './App';
 import Reroute from './App';
 
@@ -14,11 +15,11 @@ import Reroute from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 //ReactDOM.render(<Counter />, document.getElementById('root'));
 //ReactDOM.render(element, document.getElementById('root'));
+//<Reroute />
 
 root.render(
     <React.StrictMode>
         <App />
-        <Reroute />
     </React.StrictMode>
 );
 

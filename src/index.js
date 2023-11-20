@@ -1,10 +1,8 @@
 import React from 'react';
-//import ReactDOM from 'react-dom/client';
 import ReactDOM from 'react-dom';
-//import './index.css';
 
 import App from './App';
-import Reroute from './App';
+//import Reroute from './App';
 
 //import reportWebVitals from './reportWebVitals';
 //import registerServiceWorker from "./registerServiceWorker";
@@ -14,15 +12,12 @@ import Reroute from './App';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-//const element = <h1>Hello World</h1>;
 //ReactDOM.render(<Counter />, document.getElementById('root'));
 //ReactDOM.render(element, document.getElementById('root'));
-//console.log(element);
-//ReactDOM.render(
+//<Reroute />
 
 root.render(
     <React.StrictMode>
-        <Reroute />
         <App />
     </React.StrictMode>
 );

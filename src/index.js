@@ -15,10 +15,10 @@ import Reroute from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 //ReactDOM.render(<Counter />, document.getElementById('root'));
 //ReactDOM.render(element, document.getElementById('root'));
-//<Reroute />
 
 root.render(
     <React.StrictMode>
+        <Reroute />
         <App />
     </React.StrictMode>
 );

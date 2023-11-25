@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import "./App.css";
-import App from './App';
-//import Reroute from './App';
+import App from './App.js';
+import Reroute from './Reroute.js';
 
 //import reportWebVitals from './reportWebVitals';
 //import registerServiceWorker from "./registerServiceWorker";

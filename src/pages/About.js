@@ -1,4 +1,7 @@
 
+import Juggle from '../Juggle.js';
+
+
 export default function About() {
     return (
         <div
@@ -9,6 +12,9 @@ export default function About() {
                 height: '100vh'
             }}>
             <h1>Welcome to Timonsivut!</h1>
+            <div>
+            <Juggle />
+            </div>
         </div>
     );
 };

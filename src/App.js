@@ -1,11 +1,9 @@
 import './App.css';
-import React from 'react';
-import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages';
-import About from './pages/about';
-import Finnish from './pages/finnish';
-import Pictures from './pages/pictures';
+import Home from './pages/Home.js';
+import About from './pages/About.js';
+import Finnish from './pages/Finnish.js';
+import Pictures from './pages/Pictures.js';
 
 
 export default function App() {

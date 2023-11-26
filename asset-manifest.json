@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/difbit.io/static/css/main.e86942c7.css",
-    "main.js": "/difbit.io/static/js/main.a9fd92da.js",
+    "main.css": "/difbit.io/static/css/main.ba3cb213.css",
+    "main.js": "/difbit.io/static/js/main.adf3d945.js",
     "index.html": "/difbit.io/index.html",
-    "main.e86942c7.css.map": "/difbit.io/static/css/main.e86942c7.css.map",
-    "main.a9fd92da.js.map": "/difbit.io/static/js/main.a9fd92da.js.map"
+    "main.ba3cb213.css.map": "/difbit.io/static/css/main.ba3cb213.css.map",
+    "main.adf3d945.js.map": "/difbit.io/static/js/main.adf3d945.js.map"
   },
   "entrypoints": [
-    "static/css/main.e86942c7.css",
-    "static/js/main.a9fd92da.js"
+    "static/css/main.ba3cb213.css",
+    "static/js/main.adf3d945.js"
   ]
 }
